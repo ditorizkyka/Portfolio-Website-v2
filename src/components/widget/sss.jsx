@@ -8,23 +8,23 @@ const Portfolio = () => {
     <div className="min-h-screen bg-black text-white">
       {/* Left Sidebar */}
       <div className="fixed left-0 top-0 h-full w-16 pl-20 pr-15 bg-black border-r border-gray-900 flex flex-col items-center z-30 py-6">
-      {/* Avatar Section */}
-      <div className="w-10 h-10 rounded-full bg-[#6DD33D] flex items-center justify-center text-black font-bold text-sm mb-6">
-        A
-      </div>
-      {/* Icon Section (centered vertically) */}
-      <div className="flex flex-col items-center justify-center flex-grow space-y-6">
-        <div className="w-16 h-16 flex items-center justify-center hover:bg-[#0A0A0B] rounded-lg transition-colors cursor-pointer group">
-          <User className="w-8 h-8 text-[#CCCCCC] group-hover:text-white transition-colors" />
+        {/* Avatar Section */}
+        <div className="w-10 h-10 rounded-full bg-[#6DD33D] flex items-center justify-center text-black font-bold text-sm mb-6">
+          A
         </div>
-        <div className="w-16 h-16 bg-[#0A0A0B] rounded-lg flex items-center justify-center hover:bg-[#2a2a2a] transition-colors cursor-pointer">
-          <Zap className="w-8 h-8 text-white" />
-        </div>
-        <div className="w-16 h-16 flex items-center justify-center hover:bg-[#0A0A0B] rounded-lg transition-colors cursor-pointer group">
-          <Mail className="w-8 h-8 text-[#CCCCCC] group-hover:text-white transition-colors" />
-        </div>
-      </div>
-    </div>    
+        {/* Icon Section (centered vertically) */}
+        <div className="flex flex-col items-center justify-center flex-grow space-y-6">
+          <div className="w-16 h-16 flex items-center justify-center hover:bg-[#0A0A0B] rounded-lg transition-colors cursor-pointer group">
+            <User className="w-8 h-8 text-[#CCCCCC] group-hover:text-white transition-colors" />
+          </div>
+          <div className="w-16 h-16 bg-[#0A0A0B] rounded-lg flex items-center justify-center hover:bg-[#2a2a2a] transition-colors cursor-pointer">
+            <Zap className="w-8 h-8 text-white" />
+          </div>
+          <div className="w-16 h-16 flex items-center justify-center hover:bg-[#0A0A0B] rounded-lg transition-colors cursor-pointer group">
+            <Mail className="w-8 h-8 text-[#CCCCCC] group-hover:text-white transition-colors" />
+          </div>
+        </div>  
+      </div>    
 
 
 
