@@ -1,7 +1,7 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
 import ScrambleText from '../widget/buttonAnimation'; // Adjust the path as necessary
-import profile from '../../assets/profile.jpg'; // Adjust the path as necessary
+import profile from '../../assets/AI-Engineer.jpg'; // Adjust the path as necessary
 
 const HeroSection = () => {
   return (
@@ -16,7 +16,10 @@ const HeroSection = () => {
       </div>
       
       {/* Content */}
-      <div className="flex justify-start text-left">
+      <div className="flex justify-start text-left" style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                wordSpacing: '-1px',
+              }}>
         <div className="flex-1">
           <div className="flex items-center space-x-2 mb-2">
             <span className="text-xl">👋</span>
@@ -50,9 +53,7 @@ const HeroSection = () => {
               wordSpacing: '-2px',
             }}
           >
-            Experienced web developer from Tamil Nadu, India, 
-            with a passion for crafting seamless digital 
-            experiences and a proven track record.
+            I'm a final-semester Informatics student at Telkom University, focusing on AI to become an AI Engineer. Passionate about applying AI in mobile apps, I aim to build solutions that create real social impact.
           </p>
 
           <div className="flex space-x-4">

@@ -70,11 +70,11 @@ const Avatar = () => {
     <div className="  bg-black">
       <div className="relative">
         {/* Outer circle - dark background */}
-        <div className="w-15 h-15 rounded-full bg-[#141415] flex items-center justify-center shadow-2xl">
+        <div className="w-15 h-15 rounded-full  bg-[#1f1f1f] flex items-center justify-center shadow-2xl">
           {/* Inner circle - white background for image */}
           <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
             {/* Profile image placeholder */}
-            <div className="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full  flex items-center justify-center">
               {/* SVG Person Icon */}
               <img 
                 src={profile}

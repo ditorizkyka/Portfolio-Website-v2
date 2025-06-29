@@ -1,30 +1,44 @@
 import React from 'react';
-import telkomuniv from '../../assets/telkomuniv.jpg';
-import swiss from '../../assets/swiss.jpg'; // Adjust the path as necessary
+import kontent from '../../assets/kontent.jpeg';
+import humiceng from '../../assets/humiceng.jpeg'; // Adjust the path as necessary
+import motionlab from '../../assets/motionlab.jpeg'; // Adjust the path as necessary
 import { BackpackIcon } from 'lucide-react';
 
-const MyAcademics = () => {
+const MyExperience = () => {
+  
   const experiences = [
-    {
-      company: "SMA Negeri 2 Gunungputri",
-      website: "smanegeri2gunungputriswiss.com",
-      role: "Science Class(MIPA)",
-      description: "Headed product design initiatives, defined design strategy, and ensured alignment with business objectives for market-leading products.",
-      duration: "2019 - 2022",
-      category: "High School",
-      logo: swiss
-    },
-    {
-      company: "Telkom University",
-      website: "telkomuniversity.ac.id", 
-      role: "Informatics/Computer Science(AI Focus)",
-      description: "Headed product design initiatives, defined design strategy, and ensured alignment with business objectives for market-leading products.",
-      duration: "2022 - 2026(Expected)",
-      category: "Bachelor's Degree",
-      logo: telkomuniv
-    },
-    
-  ];
+  {
+    company: "CoE Human Centric Engineering",
+    website: "humic.telkomuniversity.ac.id",
+    role: "Mobile Developer Flutter",
+    description:
+      "Developed and deployed Flutter features using GoRouter and Riverpod for pelvic education. Designed a responsive UI that improved user engagement and reduced navigation errors.",
+    duration: "Sept – Oct 2024",
+    category: "Internship",
+    logo: humiceng,
+  },
+  {
+    company: "Mobile Innovation Labolatory (Motion Lab)",
+    website: "motionlaboratory.com",
+    role: "Mobile Programmer Flutter",
+    description:
+      "Led and contributed to study groups, built real-world mobile solutions, and collaborated via GitHub to enhance development workflow and version control.",
+    duration: "Sept 2024 – May 2025",
+    category: "Internship",
+    logo: motionlab,
+  },
+  {
+    company: "Komunitas Tentor HIMA IF (Kontent HIMAIF)",
+    website: "himaiftelkom.com",
+    role: "Data Structure Mentor",
+    description:
+      "Taught fundamental Algorithm Programming and Data Structures including Linked Lists, Queue, Stack, and MLL. Helped mentees prepare for technical assessments.",
+    duration: "Sept 2024 – Jan 2025",
+    category: "Mentorship",
+    logo: kontent,
+  }
+];
+
 
   return (
     <div className="max-w-6xl mx-auto pb-20" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
@@ -35,7 +49,7 @@ const MyAcademics = () => {
             className="text-3xl font-bold"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            My Academics
+            My Work/Internship Experience
           </h2>
         </div>
 
@@ -45,7 +59,7 @@ const MyAcademics = () => {
             className="text-[#999999] mb-12 leading-relaxed text-xl text-left"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
-            A journey of continuous learning with strong academic achievements and technical growth in Computer Science.
+            Real-world experience in mobile development and AI integration through impactful internships and team collaboration.
           </p>
         </div>
       </div>
@@ -64,9 +78,7 @@ const MyAcademics = () => {
                     <h3 className="text-white font-semibold text-lg">
                       {experience.company}
                     </h3>
-                    <span className="bg-[#1f1f1f] text-[#999999] text-xs px-2 py-1 rounded-full">
-                      {experience.category}
-                    </span>
+                    
                   </div>
                   <div className="text-text-sm text-[#999999]">
                     {experience.website}
@@ -104,4 +116,4 @@ const MyAcademics = () => {
   );
 };
 
-export default MyAcademics;
+export default MyExperience;

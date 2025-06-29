@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 // Import komponen lainnya
-import SidebarLeft from '../components/common/SideBarLeft';
+import SidebarLeft from '../components/common/SidebarLeft';
 import SidebarRight from '../components/common/SidebarRight';
 import StatusBar from '../components/common/StatusBar';
 import HeroSection from '../components/Portfolio/HeroSection';
@@ -21,6 +21,7 @@ import MyStacks from '../components/Portfolio/MyStacks';
 import MyRole from '../components/Portfolio/MyRole';
 import MyTopProjects from '../components/Portfolio/MyTopProjects';
 import FooterBar from '../components/common/FooterBar';
+import MyExperience from '../components/Portfolio/MyExperience';
 
 // ✅ PERBAIKI SHOWCASE PROJECT COMPONENT
 
@@ -40,6 +41,7 @@ const Portfolio = () => {
           <MyStats />
           <MyAcademics />
           <MyStacks />
+          <MyExperience />
           <MyRole />
           
           {/* ✅ ShowcaseProject akan muncul sekarang */}

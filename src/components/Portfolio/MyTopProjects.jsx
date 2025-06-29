@@ -15,7 +15,7 @@ const MyTopProjects = () => {
 
   const projects = [
     {
-      id: "devcraft",
+      id: "MedPelvis Mobile",
       title: "Devcraft",
       url: "devcraft.com",
       category: "Portfolio",
@@ -24,6 +24,17 @@ const MyTopProjects = () => {
       description: "Showcasing expertise, passion, and innovation in the realm of development.",
       bgColor: "from-blue-900 via-purple-900 to-indigo-900",
       icon: <Rocket className="w-6 h-6" />,
+    },
+    {
+      id: "V",
+      title: "Zenith Gym", 
+      url: "zenith.com",
+      category: "Fitness",
+      pages: "5 Pages",
+      theme: "Light Theme",
+      description: "Empowering fitness enthusiasts with an immersive online experience.",
+      bgColor: "from-purple-100 via-pink-50 to-purple-200",
+      icon: <Dumbbell className="w-6 h-6" />,
     },
     {
       id: "zenith",
@@ -59,12 +70,12 @@ const MyTopProjects = () => {
                 className="text-[#999999] mb-12 leading-relaxed text-xl text-left"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
-                Navigating diverse environments with adaptability and expertise for holistic solutions.
+                Selected impactful projects showcasing my technical skills, creativity, and real-world problem-solving capabilities.
             </p>
             </div>
         </div>
         {/* Projects Grid */}
-        <div className="space-y-12 mb-10 text-left" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <div className="space-y-12 mb-10 text-left mx-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           {projects.map((project) => (
             <div
               key={project.id}
@@ -125,7 +136,7 @@ const MyTopProjects = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <div className="flex justify-center items-center mx-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           <button className="w-full flex items-center space-x-2 bg-[#141415] hover:bg-[#1f1f20] px-6 py-3 rounded-lg transition-colors justify-center group">
             <ScrambleText
               text="VIEW ALL PROJECTS"

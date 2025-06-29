@@ -48,7 +48,7 @@ export default function AutoCarousel() {
   
 
   return (
-    <div className="max-w-4xl mx-auto mb-15 " style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+    <div className="max-w-4xl mx-auto mb-20 " style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
       
       
       <div className="relative w-full h-70 rounded-xl overflow-hidden shadow-2xl">

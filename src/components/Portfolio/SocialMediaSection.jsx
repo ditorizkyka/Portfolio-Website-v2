@@ -1,60 +1,36 @@
 import React from 'react';
 import { Github, Twitter, Youtube, MessageCircle, ExternalLink } from 'lucide-react';
+import digistarClub from '../../assets/digistar-club.png';
+import telkomUniv from '../../assets/telkom-university.png'; 
+import gdgoc from '../../assets/gdgoc.png'; // Adjust the path as necessary
 
 const SocialMediaSection = () => {
   return (
     <>
       <div className="mb-13 overflow-hidden">
-        <div className="flex animate-marquee space-x-12">
+        <div className="flex animate-marquee space-x-14">
           <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <Github className="w-5 h-5" />
-            <span>github</span>
+            <img src={digistarClub} alt="Logo" className="w-30 h-30" />
           </a>
           <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <Twitter className="w-5 h-5" />
-            <span>twitter</span>
+            <img src={telkomUniv} alt="Logo" className="w-30 h-30" />
           </a>
           <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <Youtube className="w-5 h-5" />
-            <span>youtube</span>
+            <img src={gdgoc} alt="Logo" className="w-30 h-30" />
           </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <MessageCircle className="w-5 h-5" />
-            <span>discord</span>
-          </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <ExternalLink className="w-5 h-5" />
-            <span>dribbble</span>
-          </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <ExternalLink className="w-5 h-5" />
-            <span>facebook</span>
-          </a>
+          
           {/* Duplicate for seamless loop */}
           <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <Github className="w-5 h-5" />
-            <span>github</span>
+            <img src={digistarClub} alt="Logo" className="w-30 h-30" />
           </a>
           <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <Twitter className="w-5 h-5" />
-            <span>twitter</span>
+            <img src={telkomUniv} alt="Logo" className="w-30 h-30" />
           </a>
           <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <Youtube className="w-5 h-5" />
-            <span>youtube</span>
+            <img src={gdgoc} alt="Logo" className="w-30 h-30" />
           </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <MessageCircle className="w-5 h-5" />
-            <span>discord</span>
-          </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <ExternalLink className="w-5 h-5" />
-            <span>dribbble</span>
-          </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
-            <ExternalLink className="w-5 h-5" />
-            <span>facebook</span>
-          </a>
+
+          
         </div>
       </div>
 
@@ -65,14 +41,15 @@ const SocialMediaSection = () => {
             transform: translateX(0%);
           }
           100% {
-            transform: translateX(-50%);
+            transform: translateX(-33.333%);
           }
         }
-        
+       
         .animate-marquee {
           animation: marquee 20s linear infinite;
+          width: max-content;
         }
-        
+       
         .animate-marquee:hover {
           animation-play-state: paused;
         }
