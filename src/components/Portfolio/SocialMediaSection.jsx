@@ -9,24 +9,24 @@ const SocialMediaSection = () => {
     <>
       <div className="mb-13 overflow-hidden">
         <div className="flex animate-marquee space-x-14">
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
+          <a href="https://www.digistartelkom.id/" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
             <img src={digistarClub} alt="Logo" className="w-30 h-30" />
           </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
+          <a href="https://telkomuniversity.ac.id/" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
             <img src={telkomUniv} alt="Logo" className="w-30 h-30" />
           </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
+          <a href="https://gdg.community.dev/" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
             <img src={gdgoc} alt="Logo" className="w-30 h-30" />
           </a>
           
           {/* Duplicate for seamless loop */}
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
+          <a href="https://www.digistartelkom.id/" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
             <img src={digistarClub} alt="Logo" className="w-30 h-30" />
           </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
+          <a href="https://telkomuniversity.ac.id/" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
             <img src={telkomUniv} alt="Logo" className="w-30 h-30" />
           </a>
-          <a href="#" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
+          <a href="https://gdg.community.dev/" className="flex items-center space-x-2 text-[#CCCCCC] hover:text-white transition-colors whitespace-nowrap">
             <img src={gdgoc} alt="Logo" className="w-30 h-30" />
           </a>
 

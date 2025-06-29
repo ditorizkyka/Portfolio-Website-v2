@@ -5,26 +5,26 @@ import { BackpackIcon } from 'lucide-react';
 
 const MyAcademics = () => {
   const experiences = [
-    {
-      company: "SMA Negeri 2 Gunungputri",
-      website: "smanegeri2gunungputriswiss.com",
-      role: "Science Class(MIPA)",
-      description: "Headed product design initiatives, defined design strategy, and ensured alignment with business objectives for market-leading products.",
-      duration: "2019 - 2022",
-      category: "High School",
-      logo: swiss
-    },
-    {
-      company: "Telkom University",
-      website: "telkomuniversity.ac.id", 
-      role: "Informatics/Computer Science(AI Focus)",
-      description: "Headed product design initiatives, defined design strategy, and ensured alignment with business objectives for market-leading products.",
-      duration: "2022 - 2026(Expected)",
-      category: "Bachelor's Degree",
-      logo: telkomuniv
-    },
-    
-  ];
+  {
+    company: "SMA Negeri 2 Gunungputri",
+    website: "smanegeri2gunungputriswiss.com",
+    role: "Science Class (MIPA)",
+    description: "Achieved Top 3 in Science Class with a final score of 92.00. Developed strong foundational skills in mathematics, physics, and biology.",
+    duration: "2019 - 2022",
+    category: "High School",
+    logo: swiss
+  },
+  {
+    company: "Telkom University",
+    website: "telkomuniversity.ac.id", 
+    role: "Informatics / Computer Science (AI Focus)",
+    description: "Pursuing a Bachelor's in Informatics with a GPA of 3.92/4.00. Focused on Artificial Intelligence with related coursework in Machine Learning, Computer Vision, Digital Image Processing, and Data Science.",
+    duration: "2022 - 2026 (Expected)",
+    category: "Bachelor's Degree",
+    logo: telkomuniv
+  },
+];
+
 
   return (
     <div className="max-w-6xl mx-auto pb-20" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>

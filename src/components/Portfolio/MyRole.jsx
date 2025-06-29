@@ -1,44 +1,24 @@
+import aiEng from "../../assets/ai-eng.png"; // Adjust the path as necessary
 const MyRole = () => {
   const services = [
   {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path d="M7 4h10M7 20h10M5 8h14M5 16h14M9 12h6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: "Mobile Developer",
-    description: "Building responsive, high-performance mobile apps that deliver seamless user experiences across platforms."
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" strokeWidth="2" />
-        <path d="M8 15s1.5-2 4-2 4 2 4 2" strokeWidth="2" strokeLinecap="round" />
-        <path d="M9 9h.01M15 9h.01" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-    title: "AI Engineer",
-    description: "Designing and integrating AI systems to solve complex problems through data-driven intelligent solutions."
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path d="M3 12l2-2m0 0l7-7 7 7m-9 2v7m4-7v7m4 0h4v4H4v-4h4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: "Leadership Skill",
-    description: "Inspiring collaboration, guiding teams with vision, and driving success through clear direction and initiative."
-  },
-  {
-    icon: (
-      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10" strokeWidth="2" />
-        <path d="M12 6v6l4 2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    title: "Time Management",
-    description: "Efficiently prioritizing tasks and managing schedules to meet goals and maintain productivity under pressure."
-  }
+  icon: (
+    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      {/* Kode symbol untuk Mobile Developer */}
+      <path d="M16 18l6-6-6-6M8 6l-6 6 6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  title: "Mobile Developer",
+  description: "Building responsive, high-performance mobile apps that deliver seamless user experiences across platforms."
+},
+{
+  icon: (
+    <img src={aiEng} alt="AI Engineer Icon" className="w-8 h-8" />
+  ),
+  title: "AI Engineer",
+  description: "Designing and integrating AI systems to solve complex problems through data-driven intelligent solutions."
+}
+
 ];
 
 
@@ -51,10 +31,10 @@ const MyRole = () => {
             <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
             </svg>
-            <h1 className="text-4xl font-bold">My Role</h1>
+            <h1 className="text-4xl font-bold">My Skills/Role</h1>
           </div>
           <p className="text-[#999999] text-lg max-w-4xl leading-relaxed">
-Contributions across various roles—from developer to mentor—driving innovation and collaboration in every project.          </p>
+            Contributions across various roles—from developer to mentor—driving innovation and collaboration in every project.          </p>
         </div>
 
         {/* Services Grid */}

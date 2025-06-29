@@ -12,10 +12,18 @@ import waveEdu from '../../assets/project-image/waveEdu.png';
 import cardCCredit from '../../assets/project-image/cardCredit.jpg'; 
 import pollusafe from '../../assets/project-image/pollusafe.jpg'; // Adjust the path as necessary
 
-export default function ProjectsSection() {
-  const [selectedProject, setSelectedProject] = useState(null);
+import ScrambleText from "../widget/buttonAnimation"; // Adjust the path as necessary
+import {
+    Dumbbell,
+    Rocket,
+    PenTool,
+    ExternalLink,
+    ArrowRight
+} from "lucide-react";
+// Di akhir file ProjectsSection.js
 
-  const projects = [
+
+const projects = [
   {
     id: 1,
     image: crabPrediction, // dummy
@@ -34,7 +42,7 @@ export default function ProjectsSection() {
     title: "Tel-Mind Powered Gemini",
     label: "AI Integration Projects",
     description: "Aplikasi Flutter yang menghasilkan respons AI cerdas berbasis Gemini API.",
-    githubUrl: "https://github.com/ditorizkyka",
+    githubUrl: "https://github.com/ditorizkyka/Tel-Mind-Powered-by-Gemini",
     duration: "1 bulan",
     stack: ["Flutter", "Gemini API", "Generative AI"],
     fullDescription: "Eksperimen awal teknologi AI generatif dalam aplikasi berbasis teks.",
@@ -118,7 +126,7 @@ export default function ProjectsSection() {
     title: "MoneyMate App",
     label: "Personal Finance",
     description: "Aplikasi pencatatan pengeluaran harian dengan statistik pengeluaran dan fitur konversi mata uang.",
-    githubUrl: "https://github.com/ditorizkyka/MoneyMate",
+    githubUrl: "https://github.com/ditorizkyka/Money-Mate-ABP-Projects",
     duration: "1 bulan",
     stack: ["Flutter", "Firebase", "GETX"],
     fullDescription: "Tracking pengeluaran pengguna secara real-time dan visualisasi data keuangan.",
@@ -152,6 +160,12 @@ export default function ProjectsSection() {
 ];
 
 
+export default function ProjectsSection() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  
+
+
   const truncateText = (text, maxLines = 2) => {
     const words = text.split(' ');
     const maxWords = maxLines * 15;
@@ -177,7 +191,7 @@ export default function ProjectsSection() {
 
   return (
     <section className=" bg-black min-h-screen text-left" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         {/* Section Header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
@@ -192,7 +206,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mb-10">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -247,11 +261,42 @@ export default function ProjectsSection() {
         </div>
 
         {/* Optional: Load More Button */}
-        <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
-            View More Projects with Github
-          </button>
-        </div>
+        
+        <div className="flex gap-4 w-full px-4">
+  {/* GitHub Button */}
+  <a
+    href="https://github.com/ditorizkyka"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-1/2"
+  >
+    <button className="w-full flex items-center justify-center space-x-2 bg-[#141415] hover:bg-[#1f1f20] px-6 py-3 rounded-lg transition-colors group">
+      <ScrambleText
+        text="GITHUB PROJECTS"
+        className="text-md text-[#CCCCCC] group-hover:text-[#FFFFFF] transition-colors"
+      />
+      <ArrowRight className="w-4 h-4 text-[#CCCCCC] group-hover:text-[#FFFFFF] transition-colors" />
+    </button>
+  </a>
+
+  {/* Google Drive Button */}
+  <a
+    href="https://drive.google.com/file/d/1rxH1fs-9ii1ltH8OgwQL3mqYI2GU2_2y/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-1/2"
+  >
+    <button className="w-full flex items-center justify-center space-x-2 bg-[#141415] hover:bg-[#1f1f20] px-6 py-3 rounded-lg transition-colors group">
+      <ScrambleText
+        text="DRIVE FILES"
+        className="text-md text-[#CCCCCC] group-hover:text-[#FFFFFF] transition-colors"
+      />
+      <ArrowRight className="w-4 h-4 text-[#CCCCCC] group-hover:text-[#FFFFFF] transition-colors" />
+    </button>
+  </a>
+</div>
+
+        
       </div>
 
       {/* Dialog Modal */}
@@ -328,25 +373,42 @@ export default function ProjectsSection() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex gap-4">
-                <a
-                  href={selectedProject.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
-                >
-                  <svg className="w-6 h-6 text-[#CCCCCC] group-hover:text-white transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                  View on GitHub
-                </a>
-                <button
-                  onClick={closeDialog}
-                  className="px-6 py-3 bg-[#1f1f1f] hover:bg-gray-800 text-gray-300 font-medium rounded-lg transition-colors duration-200"
-                >
-                  Close
-                </button>
+              <div className="flex flex-col gap-4">
+                {/* Main Buttons */}
+                <div className="flex gap-4">
+                  <a
+                    href={selectedProject.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 w-1/2 justify-center"
+                  >
+                    <Github className="w-5 h-5" />
+                    View on GitHub
+                  </a>
+                  <button
+                    onClick={closeDialog}
+                    className="px-6 py-3 bg-[#1f1f1f] hover:bg-gray-800 text-gray-300 font-medium rounded-lg transition-colors duration-200 w-1/2"
+                  >
+                    Close
+                  </button>
+                </div>
+
+                {/* New Buttons */}
+                {/* New Buttons */}
+  <div className="flex gap-4">
+    <button
+      className="w-1/2 px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-all"
+    >
+      Live Demo
+    </button>
+    <button
+      className="w-1/2 px-6 py-3 bg-green-700 hover:bg-green-600 text-white font-medium rounded-lg transition-all"
+    >
+      Documentation
+    </button>
+  </div>
               </div>
+
             </div>
           </div>
         </div>

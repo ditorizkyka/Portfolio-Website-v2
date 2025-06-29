@@ -10,7 +10,7 @@ const SidebarLeft = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <div className="fixed left-0 top-0 h-full w-16 pl-20 pr-15 bg-black border-r border-[#1f1f1f] flex flex-col items-center z-30 py-6">
+<div className="hidden md:flex fixed left-0 top-0 h-full w-16 pl-20 pr-15 bg-black border-r border-[#1f1f1f] flex-col items-center z-30 py-6">
       {/* Avatar Section */}
       <Avatar />
 
@@ -47,7 +47,9 @@ const SidebarLeft = () => {
         </Link>
 
         {/* Mail (optional route placeholder) */}
-        <Link to="/contact">
+        <a
+              href="mailto:rizkykandito@gmail.com"
+            >
           <div
             className={`w-16 h-16 flex items-center justify-center rounded-lg transition-colors cursor-pointer group ${
               isActive('/contact') ? 'bg-[#0A0A0B]' : 'hover:bg-[#0A0A0B]'
@@ -59,7 +61,7 @@ const SidebarLeft = () => {
               } transition-colors`}
             />
           </div>
-        </Link>
+        </a>
       </div>
     </div>
   );
