@@ -1,27 +1,27 @@
-import { useState } from "react";
-import ScrambleText from "../widget/buttonAnimation"; // Adjust the path as necessary
+import { useState, useEffect } from "react";
+import ScrambleText from "../widget/buttonAnimation";
 import {
-    Dumbbell,
-    Rocket,
-    PenTool,
-    ExternalLink,
-    ArrowRight
+  ExternalLink,
+  ArrowRight,
+  PenTool,
 } from "lucide-react";
-import telmind from '../../assets/project-image/telmind.jpg'; // Adjust the path as necessary
-import catclassification from '../../assets/project-image/cat-classification.jpg'; // Adjust the path as necessary
-import crabPrediction from '../../assets/project-image/crab-prediction.png';
-import vehicleDetection from '../../assets/project-image/vehicle-detection.jpg';
-import catDetection from '../../assets/project-image/cat-detection.jpg'; 
-import potholeDetection from '../../assets/project-image/pothole-detection.png';
-import medpelvis from '../../assets/project-image/medpelvis.jpg';
-import moneyMate from '../../assets/project-image/moneyMate.jpg'; // Adjust the path as necessary
-import waveEdu from '../../assets/project-image/waveEdu.png';
-import cardCCredit from '../../assets/project-image/cardCredit.jpg'; 
-import pollusafe from '../../assets/project-image/pollusafe.jpg'; 
 import { Link } from "react-router-dom";
 
-// Import projects dari file ProjectsSection
-const projects = [
+// Images
+import telmind from '../../assets/project-image/telmind.jpg';
+import catclassification from '../../assets/project-image/cat-classification.jpg';
+import crabPrediction from '../../assets/project-image/crab-prediction.png';
+import vehicleDetection from '../../assets/project-image/vehicle-detection.jpg';
+import catDetection from '../../assets/project-image/cat-detection.jpg';
+import potholeDetection from '../../assets/project-image/pothole-detection.png';
+import medpelvis from '../../assets/project-image/medpelvis.jpg';
+import moneyMate from '../../assets/project-image/moneyMate.jpg';
+import waveEdu from '../../assets/project-image/waveEdu.png';
+import cardCCredit from '../../assets/project-image/cardCredit.jpg';
+import pollusafe from '../../assets/project-image/pollusafe.jpg';
+
+
+  const projects = [
   {
     id: 1,
     image: crabPrediction, // dummy
@@ -157,70 +157,126 @@ const projects = [
   },
 
 ];
-/* eslint-disable no-unused-vars */
+
+
+// Komponen utama
 const MyTopProjects = () => {
-  // ✅ Perbaiki useState - tambahkan hoveredProject state
-  const [hoveredProject, setHoveredProject] = useState(null);
-  
-  // Ambil hanya 6 project teratas untuk ditampilkan di Top Projects
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const topProjects = projects.slice(0, 3);
 
-  // Fungsi untuk mengonversi GitHub URL menjadi format yang lebih bersih
-  const formatGithubUrl = (githubUrl) => {
-    return githubUrl.replace('https://github.com/', 'github.com/');
-  };
-
-  return (
-    <div className="min-h-screen bg-black text-white relative overflow-hidden">
-      <div className="relative z-10 container mx-auto py-12">
-        {/* Header */}
-        <div>
-            <div className="flex items-center space-x-3 mb-4">
-            <PenTool className="w-7 h-7" />
-            <h2
-                className="text-3xl font-bold"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
-                My Top Projects
-            </h2>
-            </div>
-
-            {/* Geser paragraf sejajar ke ikon */}
-            <div className="">
-            <p 
-                className="text-[#999999] mb-12 leading-relaxed text-xl text-left"
-                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-            >
-                Selected impactful projects showcasing my technical skills, creativity, and real-world problem-solving capabilities.
-            </p>
-            </div>
+  // Mobile UI
+  if (isMobile) {
+    return (
+      <div className="min-h-screen bg-black text-white py-6 space-y-8 text-left" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+        <div className="mb-8">
+          <h2 className="text-lg font-bold flex items-center gap-2 mb-2">
+            <PenTool className="w-6 h-6" />
+            My Top Projects
+          </h2>
+          <p className="text-[#999999] text-[12px] text-base ">
+            Selected impactful projects showcasing my technical skills, creativity, and real-world problem-solving capabilities.
+          </p>
         </div>
-        
-        {/* Projects Grid */}
+
+        {topProjects.map((project) => (
+          <div
+            key={project.id}
+            className="bg-[#0A0A0B] rounded-2xl border border-[#1f1f1f] p-4 shadow-lg transition-transform hover:scale-[1.015]"
+          >
+            {/* Image */}
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 object-cover rounded-xl mb-4"
+            />
+
+            {/* Title & Link in One Row */}
+            <div className="flex justify-between items-center mb-3">
+              {/* Title */}
+              <h3 className="text-white text-md font-semibold w-40">
+                {project.title}
+              </h3>
+
+              {/* Link */}
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-[#999999] hover:text-blue-400 hover:underline underline-offset-4"
+              >
+                <ExternalLink className="w-4 h-4 mr-1" />
+                {new URL(project.githubUrl).hostname}
+              </a>
+            </div>
+
+
+            {/* Meta: label, pages (dummy), theme */}
+            <div className="flex items-center flex-wrap text-xs text-[#999999] gap-2 mb-4">
+              <span>{project.label}</span>
+              <span>•</span>
+              <span>{project.duration}</span>
+              <span>•</span>
+              <span>Dark Theme</span>
+            </div>
+
+            {/* Description */}
+            <p className="text-[#999999] text-[12px] leading-relaxed line-clamp-3 ">
+              {project.description}
+            </p>
+          </div>
+        ))}
+        <Link to="/projects">
+          <button className="w-full bg-[#141415] hover:bg-[#1f1f20] px-4 py-3 rounded-lg text-[#CCCCCC] mt-6">
+            VIEW ALL PROJECTS
+          </button>
+        </Link>
+      </div>
+    );
+  }
+
+  // Desktop UI
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-hidden text-left">
+      <div className="relative z-10 container mx-auto py-12">
+        <div>
+          <div className="flex items-center space-x-3 mb-4">
+            <PenTool className="w-7 h-7" />
+            <h2 className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              My Top Projects
+            </h2>
+          </div>
+          <p className="text-[#999999] mb-12 leading-relaxed text-xl" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            Selected impactful projects showcasing my technical skills, creativity, and real-world problem-solving capabilities.
+          </p>
+        </div>
+
         <div className="space-y-12 mb-10 text-left mx-6" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
           {topProjects.map((project) => (
             <div
               key={project.id}
               className="group h-40 lg:h-70 relative rounded-3xl overflow-hidden transition-all duration-700 hover:scale-[1.02] flex flex-col lg:flex-row gap-0 bg-[#0A0A0B] backdrop-blur-xl border border-white/10"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
             >
-              {/* Image Section - Container */}
-              <div className="lg:w-1/2 my-4 ml-4 relative overflow-hidden rounded-3xl lg:rounded-3xl">
-                <div className="absolute inset-0 bg-gradient-to-br opacity-90"></div>
-                <div className="absolute inset-0 bg-black/10"></div>
-                
-                {/* Tampilkan gambar asli dari project */}
+              <div className="lg:w-1/2 my-4 ml-4 relative overflow-hidden rounded-3xl">
+                <div className="absolute inset-0 bg-gradient-to-br opacity-90" />
+                <div className="absolute inset-0 bg-black/10" />
                 <div className="relative z-10 w-full h-full">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover rounded-3xl"
                   />
                 </div>
               </div>
 
-              {/* Content Section */}
               <div className="lg:w-1/2 px-6 py-8 flex flex-col justify-center space-y-6">
                 <div className="space-y-4">
                   <div className="flex flex-row gap-3 justify-between mb-6">
@@ -234,10 +290,10 @@ const MyTopProjects = () => {
                       className="inline-flex text-[#999999] font-semibold border-[#1f1f1f] items-center gap-2 px-4 py-2 bg-[#141415] rounded-md text-md transition-all duration-300 border w-fit hover:bg-[#1f1f20]"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      Github
+                      GitHub
                     </a>
                   </div>
- 
+
                   <div className="flex flex-wrap gap-3 text-sm mb-6">
                     <span className="bg-[#1f1f1f] text-[#999999] text-xs px-2 py-1 rounded-full">
                       {project.label}
@@ -247,11 +303,10 @@ const MyTopProjects = () => {
                     </span>
                   </div>
 
-                 <p className="text-base leading-relaxed text-[#999999] line-clamp-2">
-                  {project.description}
-                </p>
+                  <p className="text-base leading-relaxed text-[#999999] line-clamp-2">
+                    {project.description}
+                  </p>
 
-                  {/* Tech Stack */}
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.stack.slice(0, 3).map((tech, index) => (
                       <span

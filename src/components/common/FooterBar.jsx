@@ -5,7 +5,7 @@ const FooterBar = () => {
         <div className="bg-black text-white text-center py-4 mt-auto border-t border-[#1f1f1f]">
             <div className="max-w-6xl mx-auto px-4">
                 
-                <p className="text-gray-400 text-sm">© 2024 Your Portfolio. All rights reserved. Designed by Praha</p>
+                <p className="text-[#999999] text-sm">© 2025 Dito Portfolio. All rights reserved. <span className="font-bold">Designed/Inspired by Praha</span></p>
             </div>
         </div>
     );

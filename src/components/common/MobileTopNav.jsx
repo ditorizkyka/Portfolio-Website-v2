@@ -6,7 +6,7 @@ const MobileTopNav = () => {
 
   const isActive = (path) => location.pathname === path;
 
-  const baseClass = "flex items-center gap-2 px-4 py-2 rounded-xl border transition-colors";
+  const baseClass = "flex items-center gap-2 px-4 py-2 rounded-lg border transition-colors";
   const activeClass = "bg-[#0A0A0B] border-[#1f1f1f] text-white";
   const inactiveClass = "border-[#1f1f1f] text-[#CCCCCC]";
 
@@ -21,7 +21,7 @@ const MobileTopNav = () => {
 
           <Link to="/projects" className={`${baseClass} ${isActive('/projects') ? activeClass : inactiveClass}`}>
             <Zap className="w-5 h-5" />
-            <span className="text-xs font-medium">SERVICES</span>
+            <span className="text-xs font-medium">PROJECTS</span>
           </Link>
 
           <a href="mailto:rizkykandito@gmail.com" className={`${baseClass} ${isActive('/contact') ? activeClass : inactiveClass}`}>
