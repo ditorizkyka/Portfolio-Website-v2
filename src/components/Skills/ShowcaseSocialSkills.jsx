@@ -108,9 +108,7 @@ export default function SocialSkills() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
+            <UsersRound className="w-7 h-7" />
             <h1 className="text-lg font-bold text-white">Social Projects/Activities</h1>
           </div>
           <p className="text-[#999999] text-[12px] max-w-4xl leading-relaxed">
@@ -239,10 +237,8 @@ export default function SocialSkills() {
         {/* Section Header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
-            <h1 className="text-4xl font-bold text-white">All projects details</h1>
+            <UsersRound className="w-7 h-7" />
+            <h1 className="text-4xl font-bold text-white">Social Projects/Activities</h1>
           </div>
           <p className="text-gray-400 text-lg max-w-4xl leading-relaxed">
             Formulating comprehensive strategies to meet your design goals and exceed expectations.

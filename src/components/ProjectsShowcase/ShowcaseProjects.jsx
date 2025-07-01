@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Github, X, Calendar, Code , Link} from 'lucide-react';
+import { Github, X, Calendar, Code , Link, Shapes} from 'lucide-react';
 import telmind from '../../assets/project-image/telmind.jpg'; // Adjust the path as necessary
 import catclassification from '../../assets/project-image/cat-classification.jpg'; // Adjust the path as necessary
 import crabPrediction from '../../assets/project-image/crab-prediction.png';
@@ -204,9 +204,7 @@ export default function ProjectsSection() {
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
-            <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
+            <Shapes className="w-7 h-7" />
             <h1 className="text-lg font-bold text-white">All projects details</h1>
           </div>
           <p className="text-[#999999] text-[12px] max-w-4xl leading-relaxed">

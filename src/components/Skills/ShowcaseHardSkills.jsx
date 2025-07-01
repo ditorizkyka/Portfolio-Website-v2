@@ -22,7 +22,7 @@ const certifications = [
     description:
       "Certified with 90% score, demonstrating strong grasp of Agile principles, Scrum roles, events, and artifacts.",
     stack: ["Scrum", "Agile", "Project Management"],
-    linkDrive: "", // sertifikat bisa disisipkan jika ada
+    linkDrive: "https://drive.google.com/file/d/1FB68mxkxPlbcX8Y_D5IW6VR4Fb5b5Web/view?usp=drive_link", // sertifikat bisa disisipkan jika ada
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const certifications = [
     description:
       "MedPelvis Mobile registered under HKI. Educational anatomy app with videos, visualizations, and GIFs.",
     stack: ["Flutter", "Mobile App", "Legal Protection"],
-    linkDrive: "",
+    linkDrive: "https://drive.google.com/file/d/1yX77oFxqJxHpgtv9ghdceXKamm3E_m_I/view?usp=sharing",
   },
 ];
 
