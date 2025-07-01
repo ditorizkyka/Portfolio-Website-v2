@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { User, Zap, Mail } from 'lucide-react';
+import { User, Zap, Shapes } from 'lucide-react';
 
 const MobileTopNav = () => {
   const location = useLocation();
@@ -20,14 +20,14 @@ const MobileTopNav = () => {
           </Link>
 
           <Link to="/projects" className={`${baseClass} ${isActive('/projects') ? activeClass : inactiveClass}`}>
-            <Zap className="w-5 h-5" />
+            <Shapes className="w-5 h-5" />
             <span className="text-xs font-medium">PROJECTS</span>
           </Link>
 
-          <a href="mailto:rizkykandito@gmail.com" className={`${baseClass} ${isActive('/contact') ? activeClass : inactiveClass}`}>
-            <Mail className="w-5 h-5" />
-            <span className="text-xs font-medium">CONTACT</span>
-          </a>
+          <Link to="/skills" className={`${baseClass} ${isActive('/skills') ? activeClass : inactiveClass}`}>
+            <Zap className="w-5 h-5" />
+            <span className="text-xs font-medium">SKILLS</span>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, PenTool } from 'lucide-react';
+import { ChevronRight, Layers } from 'lucide-react';
 import github from '../../assets/stacks/github.svg';
 import firebase from '../../assets/stacks/firebase.svg';
 import mysql from '../../assets/stacks/mysql.svg';
@@ -64,7 +64,7 @@ const MyStacks = () => {
                 <p className="text-[#999999] text-xs">{stack.category}</p>
               </div>
             </div>
-            <ArrowRight className="w-4 h-4 text-[#999999]  group-hover:text-white transition" />
+            <ChevronRight className="w-4 h-4 text-[#999999]  group-hover:text-white transition" />
           </div>
         </a>
       ))}
@@ -94,7 +94,7 @@ const MyStacks = () => {
       </div>
 
       {/* Kanan: Arrow Icon */}
-      <ArrowRight className="w-4 h-4 text-[#999999]  group-hover:text-white transition" />
+      <ChevronRight className="w-4 h-4 text-[#999999]  group-hover:text-white transition" />
     </a>
   ))}
 </div>
@@ -107,7 +107,7 @@ const MyStacks = () => {
         {/* Header */}
         <div>
         <div className="flex items-center space-x-3 mb-4">
-          <PenTool className="w-7 h-7" />
+          <Layers className="w-7 h-7" />
           <h2 className="text-lg md:text-3xl font-bold">My Stack</h2>
         </div>
         <p className="text-[#999999] mb-8 md:mb-12 leading-relaxed text-[12px] md:text-xl text-left">

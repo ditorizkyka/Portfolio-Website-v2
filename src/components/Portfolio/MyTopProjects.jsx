@@ -3,7 +3,7 @@ import ScrambleText from "../widget/buttonAnimation";
 import {
   ExternalLink,
   ArrowRight,
-  PenTool,
+  Star,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -179,7 +179,7 @@ const MyTopProjects = () => {
       <div className="min-h-screen bg-black text-white py-6 space-y-8 text-left" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
         <div className="mb-8">
           <h2 className="text-lg font-bold flex items-center gap-2 mb-2">
-            <PenTool className="w-6 h-6" />
+            <Star className="w-6 h-6" />
             My Top Projects
           </h2>
           <p className="text-[#999999] text-[12px] text-base ">
@@ -249,7 +249,7 @@ const MyTopProjects = () => {
       <div className="relative z-10 container mx-auto py-12">
         <div>
           <div className="flex items-center space-x-3 mb-4">
-            <PenTool className="w-7 h-7" />
+            <Star className="w-7 h-7" />
             <h2 className="text-3xl font-bold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
               My Top Projects
             </h2>

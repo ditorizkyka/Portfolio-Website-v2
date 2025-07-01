@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap, Mail, User } from 'lucide-react';
+import { Shapes, Zap, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 import profile from '../../assets/profile.jpg'; // Adjust the path as necessry
@@ -10,7 +10,7 @@ const SidebarLeft = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-<div className="hidden md:flex fixed left-0 top-0 h-full w-16 pl-20 pr-15 bg-black border-r border-[#1f1f1f] flex-col items-center z-30 py-6">
+  <div className="hidden md:flex fixed left-0 top-0 h-full w-16 pl-20 pr-15 bg-black border-r border-[#1f1f1f] flex-col items-center z-30 py-6">
       {/* Avatar Section */}
       <Avatar />
 
@@ -38,7 +38,7 @@ const SidebarLeft = () => {
               isActive('/projects') ? 'bg-[#0A0A0B]' : 'hover:bg-[#0A0A0B]'
             }`}
           >
-            <Zap
+            <Shapes
               className={`w-8 h-8 ${
                 isActive('/projects') ? 'text-white' : 'text-[#CCCCCC] group-hover:text-white'
               } transition-colors`}
@@ -46,22 +46,20 @@ const SidebarLeft = () => {
           </div>
         </Link>
 
-        {/* Mail (optional route placeholder) */}
-        <a
-              href="mailto:rizkykandito@gmail.com"
-            >
+        {/* Zap (optional route placeholder) */}
+        <Link to="/skills">
           <div
             className={`w-16 h-16 flex items-center justify-center rounded-lg transition-colors cursor-pointer group ${
               isActive('/contact') ? 'bg-[#0A0A0B]' : 'hover:bg-[#0A0A0B]'
             }`}
           >
-            <Mail
+            <Zap
               className={`w-8 h-8 ${
                 isActive('/contact') ? 'text-white' : 'text-[#CCCCCC] group-hover:text-white'
               } transition-colors`}
             />
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

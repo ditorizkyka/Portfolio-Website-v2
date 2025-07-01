@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import satu from '../../assets/carousel-image/1.png';
-import dua from '../../assets/carousel-image/projects-2.png';
-import tiga from '../../assets/carousel-image/projects-3.png';
-import empat from '../../assets/carousel-image/projects-4.png';
+import dua from '../../assets/carousel-image/skills-2.png';
+import tiga from '../../assets/carousel-image/skills-3.png';
+import empat from '../../assets/carousel-image/skills-4.png';
+import lima from '../../assets/carousel-image/skills-5.png';
 
-export default function AutoCarousel() {
-  const slides = [satu, dua, tiga, empat];
+export default function AutoCarouselSkills() {
+  const slides = [satu, dua, tiga, empat, lima];
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying] = useState(true);

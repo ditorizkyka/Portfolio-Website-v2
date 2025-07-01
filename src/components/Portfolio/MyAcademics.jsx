@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import telkomuniv from '../../assets/telkomuniv.jpg';
 import swiss from '../../assets/swiss.jpg';
-import { BackpackIcon } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 
 const MyAcademics = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -41,7 +41,7 @@ const MyAcademics = () => {
       {/* Header */}
       <div>
         <div className="flex items-center space-x-3 mb-4">
-          <BackpackIcon className="w-7 h-7" />
+          <GraduationCap className="w-7 h-7" />
           <h2 className="text-lg md:text-3xl font-bold">My Academics</h2>
         </div>
         <p className="text-[#999999] mb-12 leading-relaxed text-[12px] md:text-xl text-left">
