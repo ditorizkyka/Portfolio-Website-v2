@@ -10,6 +10,7 @@ import medpelvis from '../../assets/project-image/medpelvis.jpg';
 import moneyMate from '../../assets/project-image/moneyMate.jpg'; // Adjust the path as necessary
 import waveEdu from '../../assets/project-image/waveEdu.png';
 import cardCCredit from '../../assets/project-image/cardCredit.jpg'; 
+import insightHireImage from '../../assets/project-image/insightHire.jpg'; // Adjust the path as necessary
 import pollusafe from '../../assets/project-image/pollusafe.jpg'; // Adjust the path as necessary
 
 import ScrambleText from "../widget/buttonAnimation"; // Adjust the path as necessary
@@ -260,7 +261,38 @@ const projects = [
     isDeployed : false,
     liveUrl: "",
 
-  }
+  },
+  {
+  id: 12,
+  image: insightHireImage, // ganti dengan thumbnail project kamu
+  title: "InsightHire – AI Resume Screener",
+  label: "AI/NLP Projects",
+  description: "Sistem pintar untuk mengevaluasi kecocokan CV terhadap Job Description menggunakan NLP dan semantic matching.",
+  githubUrl: "https://github.com/ditorizkyka/InsightHire", // ganti jika belum dibuat
+  duration: "3 bulan",
+  stack: ["Sentence-BERT", "Cosine Similarity", "Streamlit", "Python", "PDF Parsing"],
+  fullDescription: "InsightHire adalah aplikasi AI resume screener berbasis NLP yang dirancang untuk membantu HR mengevaluasi kecocokan antara resume pelamar dan job description. Aplikasi ini memanfaatkan semantic similarity dari Sentence-BERT dan rule-based skill extraction untuk menghasilkan skor kecocokan, matched skill, dan feedback personal secara otomatis.",
+  implementation: `
+  <p>Proyek dimulai dengan membangun pipeline modular untuk membaca dan membersihkan file <strong>resume dalam format PDF</strong>. Teks resume diekstrak menggunakan <code>PyMuPDF</code> dan diproses melalui tahapan normalisasi seperti <em>lowercasing</em>, <em>punctuation removal</em>, dan <em>lemmatization</em>.</p>
+
+  <p>Resume dan job description yang telah diproses kemudian dikonversi menjadi <strong>embedding vektor</strong> menggunakan model <strong>Sentence-BERT (paraphrase-MiniLM-L6-v2)</strong>. Skor kemiripan dihitung dengan <code>cosine similarity</code> untuk mengukur kesesuaian semantic antar teks.</p>
+
+  <p>Selain itu, aplikasi ini memiliki <strong>rule-based skill extraction</strong> yang membandingkan daftar <code>SKILL_KEYWORDS</code> terhadap teks resume dan job description untuk menemukan skill yang cocok dan yang belum disebutkan. Matching ini dikategorikan berdasarkan domain (AI, Data, SE, Cyber, QA) agar lebih informatif.</p>
+
+  <ul style="margin-left: 1rem; list-style-type: disc;">
+    <li>Skor kecocokan dihitung berdasarkan <code>similarity score</code> + jumlah matched skill.</li>
+    <li>Feedback otomatis diberikan seperti: "Kamu cocok di skill X, sebaiknya tambahkan Y."</li>
+    <li>Pipeline dikembangkan secara modular: <code>parser.py</code>, <code>matcher.py</code>, <code>scorer.py</code>.</li>
+  </ul>
+
+  <p>Aplikasi diimplementasikan dengan <strong>Streamlit sebagai antarmuka web interaktif</strong>, yang memungkinkan pengguna mengunggah <code>resume PDF</code> dan <code>Job Description</code> secara langsung untuk melihat hasil screening dalam hitungan detik.</p>
+
+  <p>Pengembangan lanjutan akan fokus pada penyempurnaan fitur <em>Named Entity Recognition (NER)</em> untuk ekstraksi entitas seperti pengalaman dan pendidikan, serta integrasi sistem rekomendasi lowongan kerja berdasarkan profil resume pengguna.</p>
+  `,
+  isDeployed: true,
+  liveUrl: "https://insighthire.streamlit.app/", // ganti dengan URL deploy kamu jika sudah live
+}
+
 
 ];
 
