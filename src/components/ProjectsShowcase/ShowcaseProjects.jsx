@@ -12,6 +12,7 @@ import waveEdu from '../../assets/project-image/waveEdu.png';
 import cardCCredit from '../../assets/project-image/cardCredit.jpg'; 
 import insightHireImage from '../../assets/project-image/insightHire.jpg'; // Adjust the path as necessary
 import pollusafe from '../../assets/project-image/pollusafe.jpg'; // Adjust the path as necessary
+import eventBotImage from '../../assets/project-image/eventBotImage.png'; // Adjust the path as necessary
 
 import ScrambleText from "../widget/buttonAnimation"; // Adjust the path as necessary
 import {
@@ -263,35 +264,67 @@ const projects = [
 
   },
   {
-  id: 12,
-  image: insightHireImage, // ganti dengan thumbnail project kamu
-  title: "InsightHire – AI Resume Screener",
-  label: "AI/NLP Projects",
-  description: "Sistem pintar untuk mengevaluasi kecocokan CV terhadap Job Description menggunakan NLP dan semantic matching.",
-  githubUrl: "https://github.com/ditorizkyka/InsightHire", // ganti jika belum dibuat
-  duration: "3 bulan",
-  stack: ["Sentence-BERT", "Cosine Similarity", "Streamlit", "Python", "PDF Parsing"],
-  fullDescription: "InsightHire adalah aplikasi AI resume screener berbasis NLP yang dirancang untuk membantu HR mengevaluasi kecocokan antara resume pelamar dan job description. Aplikasi ini memanfaatkan semantic similarity dari Sentence-BERT dan rule-based skill extraction untuk menghasilkan skor kecocokan, matched skill, dan feedback personal secara otomatis.",
-  implementation: `
-  <p>Proyek dimulai dengan membangun pipeline modular untuk membaca dan membersihkan file <strong>resume dalam format PDF</strong>. Teks resume diekstrak menggunakan <code>PyMuPDF</code> dan diproses melalui tahapan normalisasi seperti <em>lowercasing</em>, <em>punctuation removal</em>, dan <em>lemmatization</em>.</p>
+    id: 12,
+    image: insightHireImage, // ganti dengan thumbnail project kamu
+    title: "InsightHire – AI Resume Screener",
+    label: "AI/NLP Projects",
+    description: "Sistem pintar untuk mengevaluasi kecocokan CV terhadap Job Description menggunakan NLP dan semantic matching.",
+    githubUrl: "https://github.com/ditorizkyka/InsightHire", // ganti jika belum dibuat
+    duration: "3 bulan",
+    stack: ["Sentence-BERT", "Cosine Similarity", "Streamlit", "Python", "PDF Parsing"],
+    fullDescription: "InsightHire adalah aplikasi AI resume screener berbasis NLP yang dirancang untuk membantu HR mengevaluasi kecocokan antara resume pelamar dan job description. Aplikasi ini memanfaatkan semantic similarity dari Sentence-BERT dan rule-based skill extraction untuk menghasilkan skor kecocokan, matched skill, dan feedback personal secara otomatis.",
+    implementation: `
+    <p>Proyek dimulai dengan membangun pipeline modular untuk membaca dan membersihkan file <strong>resume dalam format PDF</strong>. Teks resume diekstrak menggunakan <code>PyMuPDF</code> dan diproses melalui tahapan normalisasi seperti <em>lowercasing</em>, <em>punctuation removal</em>, dan <em>lemmatization</em>.</p>
 
-  <p>Resume dan job description yang telah diproses kemudian dikonversi menjadi <strong>embedding vektor</strong> menggunakan model <strong>Sentence-BERT (paraphrase-MiniLM-L6-v2)</strong>. Skor kemiripan dihitung dengan <code>cosine similarity</code> untuk mengukur kesesuaian semantic antar teks.</p>
+    <p>Resume dan job description yang telah diproses kemudian dikonversi menjadi <strong>embedding vektor</strong> menggunakan model <strong>Sentence-BERT (paraphrase-MiniLM-L6-v2)</strong>. Skor kemiripan dihitung dengan <code>cosine similarity</code> untuk mengukur kesesuaian semantic antar teks.</p>
 
-  <p>Selain itu, aplikasi ini memiliki <strong>rule-based skill extraction</strong> yang membandingkan daftar <code>SKILL_KEYWORDS</code> terhadap teks resume dan job description untuk menemukan skill yang cocok dan yang belum disebutkan. Matching ini dikategorikan berdasarkan domain (AI, Data, SE, Cyber, QA) agar lebih informatif.</p>
+    <p>Selain itu, aplikasi ini memiliki <strong>rule-based skill extraction</strong> yang membandingkan daftar <code>SKILL_KEYWORDS</code> terhadap teks resume dan job description untuk menemukan skill yang cocok dan yang belum disebutkan. Matching ini dikategorikan berdasarkan domain (AI, Data, SE, Cyber, QA) agar lebih informatif.</p>
 
+    <ul style="margin-left: 1rem; list-style-type: disc;">
+      <li>Skor kecocokan dihitung berdasarkan <code>similarity score</code> + jumlah matched skill.</li>
+      <li>Feedback otomatis diberikan seperti: "Kamu cocok di skill X, sebaiknya tambahkan Y."</li>
+      <li>Pipeline dikembangkan secara modular: <code>parser.py</code>, <code>matcher.py</code>, <code>scorer.py</code>.</li>
+    </ul>
+
+    <p>Aplikasi diimplementasikan dengan <strong>Streamlit sebagai antarmuka web interaktif</strong>, yang memungkinkan pengguna mengunggah <code>resume PDF</code> dan <code>Job Description</code> secara langsung untuk melihat hasil screening dalam hitungan detik.</p>
+
+    <p>Pengembangan lanjutan akan fokus pada penyempurnaan fitur <em>Named Entity Recognition (NER)</em> untuk ekstraksi entitas seperti pengalaman dan pendidikan, serta integrasi sistem rekomendasi lowongan kerja berdasarkan profil resume pengguna.</p>
+    `,
+    isDeployed: true,
+    liveUrl: "https://insighthire.streamlit.app/", // ganti dengan URL deploy kamu jika sudah live
+  },
+  {
+  id: 13,
+  image: eventBotImage, // ganti dengan thumbnail atau ilustrasi chatbot + automation
+  title: "EventSync – Smart Event Submission via AI Chatbot",
+  label: "AI Automation Projects",
+  description: "Sistem otomasi pengajuan event internal berbasis chatbot yang terhubung dengan WhatsApp dan spreadsheet menggunakan AI-agent.",
+  githubUrl: "", // opsional, bisa diisi jika ingin open source
+  duration: "2 bulan",
+  stack: ["Dify", "n8n", "Telegram Bot", "Google Sheets", "Prompt Engineering"],
+  fullDescription: ` EventSync adalah sistem AI-agent berbasis automasi yang dirancang untuk menyederhanakan proses pengajuan event internal melalui interaksi chatbot dan alur validasi otomatis.  `,
+  implementation:` Cara kerja EventSync adalah sebagai berikut :
+
+  <p><strong>Alur sistem:</strong></p>
   <ul style="margin-left: 1rem; list-style-type: disc;">
-    <li>Skor kecocokan dihitung berdasarkan <code>similarity score</code> + jumlah matched skill.</li>
-    <li>Feedback otomatis diberikan seperti: "Kamu cocok di skill X, sebaiknya tambahkan Y."</li>
-    <li>Pipeline dikembangkan secara modular: <code>parser.py</code>, <code>matcher.py</code>, <code>scorer.py</code>.</li>
+    <li>Pengguna mengisi informasi melalui chatbot seperti <strong>nama event</strong>, <strong>tanggal pelaksanaan</strong>, dan <strong>lokasi event</strong>.</li>
+    <li>Setelah seluruh informasi diterima, chatbot akan mengirimkan data tersebut ke <strong>webhook n8n</strong> sebagai pemicu alur otomasi.</li>
+    <li>n8n menerima data dari webhook berupa <code>nama_event</code>, <code>tanggal</code>, dan <code>lokasi</code>, kemudian memvalidasi apakah input sesuai atau tidak.</li>
+    <li>Jika valid, sistem akan mengirimkan notifikasi konfirmasi ke <strong>Telegram bot</strong> untuk meminta approval dari pihak terkait.</li>
+    <li>Jika user menyetujui (approve) lewat Telegram, maka data event secara otomatis dicatat dan ditambahkan sebagai baris baru di <strong>Google Sheets</strong>.</li>
   </ul>
 
-  <p>Aplikasi diimplementasikan dengan <strong>Streamlit sebagai antarmuka web interaktif</strong>, yang memungkinkan pengguna mengunggah <code>resume PDF</code> dan <code>Job Description</code> secara langsung untuk melihat hasil screening dalam hitungan detik.</p>
+  <p>
+  Sistem ini meningkatkan efisiensi internal dengan menghilangkan proses manual yang berulang dalam pencatatan event, serta memberikan kontrol dan transparansi terhadap proses approval.
+  </p>
 
-  <p>Pengembangan lanjutan akan fokus pada penyempurnaan fitur <em>Named Entity Recognition (NER)</em> untuk ekstraksi entitas seperti pengalaman dan pendidikan, serta integrasi sistem rekomendasi lowongan kerja berdasarkan profil resume pengguna.</p>
-  `,
-  isDeployed: true,
-  liveUrl: "https://insighthire.streamlit.app/", // ganti dengan URL deploy kamu jika sudah live
+  <p>Pengembangan berikutnya akan difokuskan pada penambahan fitur integrasi <em>Google Calendar</em>, notifikasi email otomatis, serta tracking status event secara real-time.</p>
+`
+,
+  isDeployed: false,
+  liveUrl: "", // opsional kalau mau deploy versi demo chatbot
 }
+
 
 
 ];

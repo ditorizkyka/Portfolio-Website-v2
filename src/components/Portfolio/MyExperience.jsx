@@ -2,12 +2,24 @@ import React, { useState, useEffect } from 'react';
 import kontent from '../../assets/kontent.jpeg';
 import humiceng from '../../assets/humiceng.jpeg';
 import motionlab from '../../assets/motionlab.jpeg';
+import telkomLogo from '../../assets/telkomindo.png';
 import { BackpackIcon } from 'lucide-react';
 
 const MyExperience = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const experiences = [
+      {
+        company: "PT. Telkom Indonesia",
+        website: "https://www.telkom.co.id",
+        role: "Data & Automation Analyst Intern",
+        description:
+          "Developed an AI-agent system using n8n and Azure OpenAI to classify employee feedback by brand equity. Automated event workflows via chatbot (Dify) with WhatsApp API integration, and built analytical dashboards with Looker Studio for business insights.",
+        duration: "July – August 2025",
+        category: "Internship",
+        logo: telkomLogo,
+      }
+  ,
     {
       company: "CoE Human Centric Engineering",
       website: "humic.telkomuniversity.ac.id",
