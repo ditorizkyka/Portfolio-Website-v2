@@ -58,6 +58,7 @@ export default function AutoCarousel() {
           style={{
             width: isPlaying ? '100%' : '0%',
             animation: isPlaying ? 'progress 4s linear infinite' : 'none',
+            
           }}
         />
       </div>
