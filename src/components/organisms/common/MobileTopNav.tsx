@@ -23,7 +23,7 @@ const MobileTopNav: React.FC = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md border-b border-[#1f1f1f] py-3 z-50 md:hidden">
-      <div className="flex justify-evenly items-center px-4">
+      <div className="flex justify-between items-center px-4">
         <div className="flex gap-1">
           {navItems.map((item) => (
             <MobileNavLink
