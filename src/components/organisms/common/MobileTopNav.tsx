@@ -24,7 +24,7 @@ const MobileTopNav: React.FC = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md border-b border-[#1f1f1f] py-3 z-50 md:hidden">
 
-      <div className="flex justify-between items-center px-4">
+      <div className="flex justify-center items-center px-3">
         <div className="flex gap-1">
           {navItems.map((item) => (
             <MobileNavLink
@@ -42,14 +42,14 @@ const MobileTopNav: React.FC = () => {
 };
 
 const MobileNavLink = ({ to, icon: Icon, label, isActive }: MobileNavLinkProps) => {
-  const baseClass = "flex items-center gap-2 px-7 py-3 rounded-lg border transition-all duration-300 ease-in-out";
+  const baseClass = "flex items-center gap-2 px-5 py-3 rounded-lg border transition-all duration-300 ease-in-out";
   const activeClass = "bg-[#0A0A0B] border-[#333333] text-white shadow-lg";
   const inactiveClass = "border-transparent text-[#999999] hover:text-white hover:border-[#1f1f1f]";
   
   return (
     <Link href={to} className={`${baseClass} ${isActive ? activeClass : inactiveClass}`}>
-      <Icon className={`w-4 h-4 ${isActive ? 'text-[#6DD33D]' : 'text-inherit'}`} />
-      <span className="text-[10px] font-bold tracking-widest">{label}</span>
+      <Icon className={`w-3 h-3 ${isActive ? 'text-[#6DD33D]' : 'text-inherit'}`} />
+      <span className="text-[9px] font-bold tracking-widest">{label}</span>
     </Link>
   );
 };
