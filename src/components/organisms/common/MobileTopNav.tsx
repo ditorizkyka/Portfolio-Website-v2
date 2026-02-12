@@ -14,7 +14,7 @@ interface MobileNavLinkProps {
 
 const MobileTopNav: React.FC = () => {
   const pathname = usePathname();
-  
+
   const navItems = [
     { to: "/", icon: User, label: "HOME" },
     { to: "/projects", icon: Shapes, label: "PROJECTS" },
@@ -45,11 +45,11 @@ const MobileNavLink = ({ to, icon: Icon, label, isActive }: MobileNavLinkProps) 
   const baseClass = "flex items-center gap-2 px-5 py-3 rounded-lg border transition-all duration-300 ease-in-out";
   const activeClass = "bg-[#0A0A0B] border-[#333333] text-white shadow-lg";
   const inactiveClass = "border-transparent text-[#999999] hover:text-white hover:border-[#1f1f1f]";
-  
+
   return (
     <Link href={to} className={`${baseClass} ${isActive ? activeClass : inactiveClass}`}>
-      <Icon className={`w-3 h-3 ${isActive ? 'text-[#6DD33D]' : 'text-inherit'}`} />
-      <span className="text-[9px] font-bold tracking-widest">{label}</span>
+      <Icon className={`w-4 h-4 ${isActive ? 'text-[#6DD33D]' : 'text-inherit'}`} />
+      <span className="text-[10px] font-bold tracking-widest">{label}</span>
     </Link>
   );
 };

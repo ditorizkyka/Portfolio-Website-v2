@@ -10,67 +10,67 @@ const HeroSection: React.FC<{ profile: Profile }> = ({ profile }) => {
     // UBAH 1: Gunakan Grid untuk Mobile, dan Flex untuk Desktop
     // 'grid-cols-[auto_1fr]' membuat kolom kiri otomatis (foto) dan kanan sisa ruang (nama)
     <section className="grid grid-cols-[auto_1fr] gap-x-5 gap-y-4 md:flex md:flex-row md:items-start md:space-x-8 md:mb-4 font-space-grotesk">
-      
+
       {/* UBAH 2: Bungkus HeroImage dengan container bergaya "Kartu" */}
       {/* row-span-2 artinya di mobile dia makan tinggi baris tapi tidak lebar penuh */}
       <div className="row-span-1 md:w-auto shrink-0">
         <div className="bg-[#141415] border border-[#333333] rounded-2xl overflow-hidden w-25 h-27.5 md:w-auto md:h-auto flex items-end justify-center pt-2">
-            {/* Kita atur ukuran HeroImage agar pas di dalam kotak */}
-            <div className="w-24 md:w-70 md:h-70">
-                <HeroImage src={profile.avatar_url} />
-            </div>
+          {/* Kita atur ukuran HeroImage agar pas di dalam kotak */}
+          <div className="w-24 md:w-70 md:h-70">
+            <HeroImage src={profile.avatar_url} />
+          </div>
         </div>
       </div>
 
       {/* Content Wrapper - Dipecah agar responsif */}
       <div className="contents md:block md:flex-1 text-left" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
-        
+
         {/* BAGIAN HEADER (Hello + Nama) */}
         {/* Di mobile ini akan masuk ke kolom kanan grid */}
         <div className="flex flex-col justify-baseline md:block">
-            {/* Salutation */}
-            <div className="flex items-center space-x-2 mb-3 md:mb-2">
-              <span className="text-xl md:text-xl">👋</span>
-              <span className="text-sm md:text-lg text-[#CCCCCC] font-light">Hello I Am</span>
-            </div>
-            
-            {/* Name */}
-            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
+          {/* Salutation */}
+          <div className="flex items-center space-x-2 mb-3 md:mb-2">
+            <span className="text-xl md:text-xl">👋</span>
+            <span className="text-sm md:text-lg text-[#CCCCCC] font-light">Hello I Am</span>
+          </div>
+
+          {/* Name */}
+          <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight">
             {profile.full_name}
-            </h1>
+          </h1>
         </div>
 
         {/* BAGIAN BODY (Deskripsi + Tombol) */}
         {/* 'col-span-2' artinya di mobile dia akan turun ke bawah dan mengambil lebar penuh (kiri ke kanan) */}
-        
+
         {/* Description */}
         <div className="col-span-2 md:w-full mt-2 md:mt-4">
-            <p className="text-xs md:text-lg text-[#CCCCCC] mb-6 leading-relaxed max-w-2xl text-justify md:text-left">
+          <p className="text-sm md:text-lg text-[#CCCCCC] mb-6 leading-relaxed max-w-2xl text-justify md:text-left">
             {profile.bio}
-            </p>
+          </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4 w-full">
+          {/* Action Buttons */}
+          <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-4 w-full">
             {/* Email Button */}
             <a
-                href={profile.email}
-                className="bg-[#141415] px-6 py-3 rounded-lg flex items-center space-x-2 justify-center border border-transparent hover:border-[#333333] transition-all group"
+              href={profile.email}
+              className="bg-[#141415] px-6 py-3 rounded-lg flex items-center space-x-2 justify-center border border-transparent hover:border-[#333333] transition-all group"
             >
-                <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#CCCCCC] group-hover:text-white" />
-                <ScrambleText text="EMAIL ME" className="text-md md:text-md text-[#CCCCCC] group-hover:text-white " />
+              <Mail className="w-4 h-4 md:w-5 md:h-5 text-[#CCCCCC] group-hover:text-white" />
+              <ScrambleText text="EMAIL ME" className="text-md md:text-md text-[#CCCCCC] group-hover:text-white " />
             </a>
 
             {/* WhatsApp Button */}
             <a
-                href={profile.whatsapp_number}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#141415] px-6 py-3 rounded-lg flex items-center space-x-2 justify-center border border-transparent hover:border-[#333333] transition-all group"
+              href={profile.whatsapp_number}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#141415] px-6 py-3 rounded-lg flex items-center space-x-2 justify-center border border-transparent hover:border-[#333333] transition-all group"
             >
-                <WhatsAppIcon />
-                <ScrambleText text="CONTACT ME" className="text-sm md:text-md md:text-md text-[#CCCCCC] group-hover:text-white" />
+              <WhatsAppIcon />
+              <ScrambleText text="CONTACT ME" className="text-sm md:text-md md:text-md text-[#CCCCCC] group-hover:text-white" />
             </a>
-            </div>
+          </div>
         </div>
 
       </div>
