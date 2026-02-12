@@ -1,6 +1,6 @@
 import { FolderGit2, Layers, Briefcase, ExternalLink, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-import '../../globals.css'
+import '../../globals.css';
 
 export default function AdminDashboardPage() {
     return (
